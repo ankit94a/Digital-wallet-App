@@ -1,0 +1,32 @@
+<div class="wrapper">
+    <h3 class="mx-3">Digital Wallet</h3>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <button type="button" (click)="createWallet()" class="btn btn-link">{{'+ Create Wallet'}}</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <button type="button" (click)="transferAmount()" class="btn btn-link">{{'Transfer Amount'}}</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <button type="button" (click)="accountDetail()" class="btn btn-link">{{'Account Statement'}}</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <button type="button" [disabled]="true" (click)="accountDetail()" class="btn btn-link">{{'Transaction History'}}</button>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <a type="button" [routerLink]="'overview'" class="btn btn-link">{{'OverView'}}</a>
+            </div>
+        </div>
+    </div>
+</div>

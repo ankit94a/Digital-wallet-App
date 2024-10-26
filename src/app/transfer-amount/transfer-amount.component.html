@@ -1,0 +1,38 @@
+<div mat-dialog-title>Transfer Amount</div>
+<form #TransferAmountForm="ngForm" (ngSubmit)="send(TransferAmountForm)">
+    <mat-dialog-content>
+        <div class="row">
+            <div class="col-md-6">
+                <mat-form-field>
+                    <mat-label>Sender Account Number</mat-label>
+                    <input type="text" matInput [(ngModel)]="transferAmount.senderAccountNumber" name="sender"
+                        #sender="ngModel" required>
+                    <mat-error *ngIf="sender.touched && (sender.invalid || sender.dirty)">Sender account number is required</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field>
+                    <mat-label>Reciever Account Number</mat-label>
+                    <input type="text" matInput [(ngModel)]="transferAmount.recieverAccountNumber" name="reciever"
+                        #reciever="ngModel" required>
+                    <mat-error *ngIf="reciever.touched && (reciever.invalid || reciever.dirty)">Reciever account number
+                        is required</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <mat-form-field>
+                    <mat-label>Amount</mat-label>
+                    <input type="text" matInput [(ngModel)]="transferAmount.amount" name="amount" #amount="ngModel"
+                        required>
+                    <mat-error *ngIf="sender.touched && (sender.invalid || sender.dirty)">Amount is required</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button class="btn btn-m btn-outline-warning mx-2" (click)="close()">Close</button>
+        <button class="btn btn-m btn-primary">Send</button>
+    </mat-dialog-actions>
+</form>

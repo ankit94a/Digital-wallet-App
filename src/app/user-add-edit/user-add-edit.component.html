@@ -1,0 +1,23 @@
+<div mat-dialog-title>Add Wallet</div>
+<form #userForm="ngForm" (ngSubmit)="createWallet(userForm)" #noValidate>
+    <div class="row">
+        <div class="col-md-6">
+            <mat-form-field>
+                <mat-label>Name</mat-label>
+                <input matInput type="text" [(ngModel)]="user.name" name="name" #name="ngModel" required>
+                <mat-error *ngIf="name.touched && (name.invalid || name.dirty)">Name is required</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col-md-6">
+            <mat-form-field>
+                <mat-label>Amount</mat-label>
+                <input matInput type="text" [(ngModel)]="user.amount" #amount="ngModel" name="amount" required>
+                <mat-error *ngIf="amount.touched && (amount.invalid || amount.dirty)">Amount is required</mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+    <mat-dialog-actions align="end">
+        <button class="btn btn-m btn-outline-warning mx-2" (click)="close()">Close</button>
+        <button class="btn btn-m btn-primary">Save</button>
+    </mat-dialog-actions>
+</form>

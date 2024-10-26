@@ -1,0 +1,23 @@
+<mat-card>
+    <mat-card-header>Overview</mat-card-header>
+    <a align="end" class="mx-3" [routerLink]="''">go to dashboard</a> 
+    <mat-card-content>
+        <div class="row">
+            <div class="col-md-6" *ngFor="let user of userList">
+                <mat-card class="card">
+                    <mat-card-content>       
+                        <div class="row">
+                            <div class="col">Name : {{user.name}}</div>
+                            </div>
+                            <div class="row">
+                            <div class="col"> Account Number : {{user.id}}</div>
+                            </div>
+                            <div class="row">
+                            <div class="col">Amount : {{user.amount}}</div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

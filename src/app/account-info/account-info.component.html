@@ -1,0 +1,28 @@
+<div mat-dialog-title>Account Info</div>
+<mat-dialog-content>
+    <div class="row">
+        <div class="col-md-8">
+            <mat-form-field>
+                <mat-label>Account Number</mat-label>
+                <input type="text" matInput (keyup.enter)="getUser()" [(ngModel)]="searchAccountNumber">
+            </mat-form-field>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-m btn-primary" (click)="getUser()">Search</button>
+        </div>
+    </div>
+    <div *ngIf="user && user.amount >= 0">
+        <div class="row">
+            <div class="col">Name : {{user.name}}</div>
+        </div>
+        <div class="row">
+            <div class="col"> Account Number : {{user.id}}</div>
+        </div>
+        <div class="row">
+            <div class="col">Amount : {{user.amount}}</div>
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button class="btn btn-m btn-outline-warning" (click)="close()">Close</button>
+</mat-dialog-actions>
